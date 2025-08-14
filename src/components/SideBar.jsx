@@ -1,3 +1,3 @@
 export default function SideBar() {
-  return <div>I am sidebar</div>;
+  return <div className = "side-bar">I am sidebar</div>;
 }
