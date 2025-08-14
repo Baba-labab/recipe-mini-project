@@ -2,7 +2,7 @@ export default function NavBar() {
   return (
     <div className="nav-bar">
       <div className="logo">
-        <img src="../public/image/logo.png" />
+        <img src="../public/image/logo2.png" />
       </div>
       <div className="search">
         <input
