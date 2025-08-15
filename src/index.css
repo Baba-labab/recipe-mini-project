@@ -1,14 +1,14 @@
 * {
-  box-sizing: border-box;
-}
-html, body {
   margin: 0;
   padding: 0;
-  width: 100%; 
-  height: 100%; 
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
-  font-family: 'Courier New', Courier, monospace;
-
+  font-family: "Courier New", Courier, monospace;
 }
 
 ul {
@@ -16,64 +16,196 @@ ul {
 }
 
 a {
-  color: inherit; 
+  color: inherit;
   text-decoration: none;
 }
 
-.logo img {
-  width: 80px;
+button,
+input,
+textarea {
+  font: inherit;
 }
 
-button, input, textarea {
-  font: inherit; 
-}
-
+/* ///////////////nav-bar///////////// */
 .nav-bar {
-  position: fixed; 
+  position: fixed;
   top: 0;
-  left: 0; 
-  width: 100%; 
-  height: 80px; 
-  background-color: #b2f2bb ;
-  color: rgb(49, 49, 49); 
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  padding: 0 1rem; 
-  z-index: 1000; 
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #b2f2bb;
+  color: rgb(49, 49, 49);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  /* z-index: 1000; */
 }
 
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+}
+
+.user img {
+  width: 8%;
+}
+
+.greeting {
+  font-weight: 600;
+}
+
+.log-out {
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.log-out:hover {
+  color: #e67700;
+}
+
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* //////////////side-bar////////////// */
 .side-bar {
-  position: fixed; 
-  top: 80px; 
-  left: 0; 
-  width: 200px; 
-  height: calc(100% - 80px - 40px); 
-  background-color:#8ce99a;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 300px;
+  /* height: calc(100% - 80px - 40px); */
+  height: 100vh;
+  background-color: #8ce99a;
   color: rgb(49, 49, 49);
-  padding: 1rem; 
+  text-align: center;
   overflow-y: auto;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 40px; 
-  background-color: #69db7c;
-  color: rgb(49, 49, 49); 
-  display: flex; 
+.side-bar .side-bar-list {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1000; 
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: 600;
 }
 
+.side-bar-list li {
+  width: 100%;
+  border-bottom: 1px #999 solid;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.side-bar-list li:hover {
+  color: #e67700;
+}
+
+.side-bar-list li.active {
+  color: #e67700;
+}
+
+/* //////////content//////////// */
+
 .main-content {
-  margin-top: 80px; 
-  margin-left: 200px; 
-  margin-bottom: 40px;
-  width: calc(100% - 200px);  
-  padding: 2rem;
-  box-sizing: border-box; 
+  /* width: calc(100% - 200px); */
+  margin: 120px 10px 80px 340px;
+  width: 70%;
+}
+
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: start;
+  row-gap: 60px;
+  column-gap: 40px;
+}
+
+.recipe-box {
+  width: 30%;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px;
+  border: 1px #eee dashed;
+  border-radius: 7px;
+}
+
+.recipe-box img {
+  width: 100%;
+  border-radius: 7px;
+}
+
+.recipe-box .recipe-text {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.recipe-box p {
+  margin: 0;
+}
+
+.btns {
+  width: 100%;
+  padding: 0 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btns .like-icon {
+  width: 20%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* .btns .like-icon:hover {
+  fill: red;
+} */
+
+.btns .btn {
+  font-weight: 500;
+  width: 50%;
+  height: 40px;
+  background: #eee;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btns .btn:hover {
+  background: #e67700;
+  color: #fff;
+}
+
+/* ////////////////footer////////////////// */
+.footer {
+  font-size: 12px;
+  margin: 50px 20px 20px 320px;
+  /* background-color: #69db7c; */
+  color: rgb(49, 49, 49);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* z-index: 1000; */
 }
