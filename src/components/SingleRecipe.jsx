@@ -1,22 +1,26 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import Button from "./Button";
 
 export default function SingleRecipe({ recipe, id, onHandleDel, index }) {
   const [like, setLike] = useState(false);
 
   return (
     <li className="recipe-box">
-      <div className="recipe-img">
-        <img src={recipe["image"]} />
-      </div>
+      <NavLink to={`/recipe-detail/${recipe.id}`}>
+        <div className="recipe-img">
+          <img src={recipe["image"]} />
+        </div>
 
-      <div className="recipe-text">
-        <p style={{ color: "#fd7e14", fontWeight: 600 }}>{recipe["name"]}</p>
-        <p>calories: {recipe["calories"]}kcal</p>
-        <p>
-          serving for {recipe["servings"]}{" "}
-          <span>{recipe["servings"] === 1 ? "person" : "people"}</span>{" "}
-        </p>
-      </div>
+        <div className="recipe-text">
+          <p style={{ color: "#fd7e14", fontWeight: 600 }}>{recipe["name"]}</p>
+          <p>calories: {recipe["calories"]}kcal</p>
+          <p>
+            serving for {recipe["servings"]}{" "}
+            <span>{recipe["servings"] === 1 ? "person" : "people"}</span>{" "}
+          </p>
+        </div>
+      </NavLink>
 
       <div className="btns">
         <svg
