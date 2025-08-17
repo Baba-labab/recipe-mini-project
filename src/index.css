@@ -79,7 +79,7 @@ textarea {
   top: 80px;
   left: 0;
   width: 300px;
-  /* height: calc(100% - 80px - 40px); */
+  /*height: calc(100vH - 80px - 40px); */
   height: 100vh;
   background-color: #8ce99a;
   color: rgb(49, 49, 49);
@@ -117,10 +117,26 @@ textarea {
 
 /* //////////content//////////// */
 
-.main-content {
+.main-content, .single-content {
   /* width: calc(100% - 200px); */
   margin: 120px 10px 80px 340px;
   width: 70%;
+  display: flex;
+  /*margin-top: 80px; 
+  margin-left: 300px; 
+  margin-bottom: 60px; 
+  padding: 20px; */
+}
+
+.single.content {
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column; 
+}
+
+h2 {
+  display: flex; 
+  justify-content: center;
 }
 
 .recipe-list {
@@ -148,6 +164,7 @@ textarea {
 .recipe-box img {
   width: 100%;
   border-radius: 7px;
+  border: 1px solid #e67700; 
 }
 
 .recipe-box .recipe-text {
@@ -201,7 +218,11 @@ textarea {
 /* ////////////////footer////////////////// */
 .footer {
   font-size: 12px;
-  margin: 50px 20px 20px 320px;
+  margin-left: 300px;
+  margin-bottom: 0; 
+  padding: 20px;   
+  text-align: center; 
+  /*margin: 50px 20px 20px 320px;*/
   /* background-color: #69db7c; */
   color: rgb(49, 49, 49);
   display: flex;

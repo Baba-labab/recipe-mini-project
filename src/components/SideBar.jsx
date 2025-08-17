@@ -9,6 +9,7 @@ export default function SideBar() {
       <NavLink to="/update-recipe"  className="side-bar-list">Update Recipe</NavLink>
       <NavLink to="/about"  className="side-bar-list">About</NavLink>
       <NavLink to="/favorites"  className="side-bar-list">My Favorite Recipes</NavLink>
+      <NavLink to="/recipe-detail" className="side-bar-list">Recipe Details</NavLink>
       <li className="side-bar-list">My Profile</li>
 
     </nav>

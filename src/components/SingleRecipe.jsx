@@ -6,21 +6,21 @@ export default function SingleRecipe({ recipe }) {
   const [like, setLike] = useState(false);
 
   return (
-   
-    <li className="recipe-box"> 
-    <NavLink to={`/recipes/${recipe.id}`} >
-      <div className="recipe-img">
-        <img src={recipe["image"]} />
-      </div>
 
-      <div className="recipe-text">
-        <p style={{ color: "#fd7e14", fontWeight: 600 }}>{recipe["name"]}</p>
-        <p>calories: {recipe["calories"]}kcal</p>
-        <p>
-          serving for {recipe["servings"]}{" "}
-          <span>{recipe["servings"] === 1 ? "person" : "people"}</span>{" "}
-        </p>
-      </div>
+    <li className="recipe-box">
+      <NavLink to={`/recipe-detail/${recipe.id}`} >
+        <div className="recipe-img">
+          <img src={recipe["image"]} />
+        </div>
+
+        <div className="recipe-text">
+          <p style={{ color: "#fd7e14", fontWeight: 600 }}>{recipe["name"]}</p>
+          <p>calories: {recipe["calories"]}kcal</p>
+          <p>
+            serving for {recipe["servings"]}{" "}
+            <span>{recipe["servings"] === 1 ? "person" : "people"}</span>{" "}
+          </p>
+        </div>
       </NavLink>
 
       <div className="btns">
@@ -37,6 +37,6 @@ export default function SingleRecipe({ recipe }) {
         <Button>Delete</Button>
       </div>
     </li>
-    
+
   );
 }

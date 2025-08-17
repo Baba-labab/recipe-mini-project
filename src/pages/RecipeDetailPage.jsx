@@ -5,12 +5,15 @@ import { useParams, NavLink } from "react-router-dom"
 function RecipeDetailPage() {
     const { recipeId } = useParams();
     const singleRecipe = recipeData.find((recipe) => recipe.id === (recipeId))
+
+    if (!singleRecipe) {
+        return <p>Recipe not found.</p>
+    }
     return (
-        <div>
-            <h2>Recipe Details</h2>
-            <div className="recipe-detail">
+        <div className="single-content">
+            <div className="recipe-box">
                 <h3>{singleRecipe.name}</h3>
-                <img src={singleRecipe.image} alt={singleRecipe.name}/>
+                <img src={singleRecipe.image} alt={singleRecipe.name} />
                 <p>Calories: {singleRecipe.calories} kcal</p>
                 <p>Servings: {singleRecipe.servings}{" "}
                     {singleRecipe.servings === 1 ? "person" : "people"}
