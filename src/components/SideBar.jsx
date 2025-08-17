@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+
 
 export default function SideBar() {
   return (
-    <div className="side-bar">
-      <ul className="side-bar-list">
-        <Link to="/" className="active">Home</Link>
-        <Link to="/new-recipe">New Recipe</Link>
-        <Link to="/update-recipe">Update Recipe</Link>
-        <Link to="/about">About</Link>
-        <Link to="/favorites">My Favorite Recipes</Link>
-        <li>My Profile</li>
-      </ul>
-    </div>
+    <nav className="side-bar">
+      <NavLink to="/" className="side-bar-list">Home</NavLink>
+      <NavLink to="/new-recipe"  className="side-bar-list">New Recipe</NavLink>
+      <NavLink to="/update-recipe"  className="side-bar-list">Update Recipe</NavLink>
+      <NavLink to="/about"  className="side-bar-list">About</NavLink>
+      <NavLink to="/favorites"  className="side-bar-list">My Favorite Recipes</NavLink>
+      <li className="side-bar-list">My Profile</li>
+
+    </nav>
   );
 }

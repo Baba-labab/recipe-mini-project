@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom"
 import Button from "./Button";
 
 export default function SingleRecipe({ recipe }) {
   const [like, setLike] = useState(false);
 
   return (
-    <li className="recipe-box">
+   
+    <li className="recipe-box"> 
+    <NavLink to={`/recipes/${recipe.id}`} >
       <div className="recipe-img">
         <img src={recipe["image"]} />
       </div>
@@ -18,6 +21,7 @@ export default function SingleRecipe({ recipe }) {
           <span>{recipe["servings"] === 1 ? "person" : "people"}</span>{" "}
         </p>
       </div>
+      </NavLink>
 
       <div className="btns">
         <svg
@@ -33,5 +37,6 @@ export default function SingleRecipe({ recipe }) {
         <Button>Delete</Button>
       </div>
     </li>
+    
   );
 }

@@ -97,7 +97,7 @@ textarea {
   font-weight: 600;
 }
 
-.side-bar-list li {
+.side-bar-list  {
   width: 100%;
   border-bottom: 1px #999 solid;
   height: 60px;
@@ -107,11 +107,11 @@ textarea {
   cursor: pointer;
 }
 
-.side-bar-list li:hover {
+.side-bar-list:hover {
   color: #e67700;
 }
 
-.side-bar-list li.active {
+.side-bar-list.active {
   color: #e67700;
 }
 

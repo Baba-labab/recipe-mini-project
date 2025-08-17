@@ -1,7 +1,6 @@
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import SideBar from "./components/SideBar";
-import Content from "./components/Content";
 import HomePage from "./pages/HomePage"; 
 import RecipeDetailPage from "./pages/RecipeDetailPage"; 
 import AboutPage from "./pages/AboutPage"; 
@@ -17,7 +16,6 @@ function App() {
     <div className="container">
       <NavBar />
       <SideBar />
-      <Content />
       <Footer />
 
 <Routes>
