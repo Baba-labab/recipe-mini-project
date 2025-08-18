@@ -95,9 +95,10 @@ textarea {
   padding: 20px 0;
   font-size: 18px;
   font-weight: 600;
+  width: 100%;
 }
 
-.side-bar-list  {
+.side-bar-item {
   width: 100%;
   border-bottom: 1px #999 solid;
   height: 60px;
@@ -107,37 +108,40 @@ textarea {
   cursor: pointer;
 }
 
-.side-bar-list:hover {
+.side-bar-item:hover {
   color: #e67700;
 }
 
-.side-bar-list.active {
+.active-link,
+.active {
   color: #e67700;
 }
 
 /* //////////content//////////// */
 
-.main-content, .single-content {
+.main-content {
   /* width: calc(100% - 200px); */
   margin: 120px 10px 80px 340px;
   width: 70%;
-  display: flex;
+  /* display: flex; */
   /*margin-top: 80px; 
   margin-left: 300px; 
   margin-bottom: 60px; 
   padding: 20px; */
 }
 
-.single.content {
-  flex-wrap: wrap;
+.single-content {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-direction: column; 
+  justify-content: center;
+  gap: 80px;
 }
 
-h2 {
-  display: flex; 
+/* h2 {
+  display: flex;
   justify-content: center;
-}
+} */
 
 .recipe-list {
   display: flex;
@@ -161,10 +165,21 @@ h2 {
   border-radius: 7px;
 }
 
+.recipe-detail {
+  width: 80%;
+  border: none;
+  margin-top: -20px;
+  align-self: center;
+}
+
 .recipe-box img {
   width: 100%;
   border-radius: 7px;
-  border: 1px solid #e67700; 
+  border: 1px solid #e67700;
+}
+
+.recipe-detail img {
+  border: none;
 }
 
 .recipe-box .recipe-text {
@@ -191,14 +206,13 @@ h2 {
 }
 
 .btns .like-icon {
-  width: 20%;
-  padding: 10px;
+  width: 15%;
   cursor: pointer;
 }
 
-.btns .btn {
+.btn {
   font-weight: 500;
-  width: 50%;
+  width: 100px;
   height: 40px;
   background: #eee;
   border: none;
@@ -206,7 +220,7 @@ h2 {
   cursor: pointer;
 }
 
-.btns .btn:hover {
+.btn:hover {
   background: #e67700;
   color: #fff;
 }
@@ -214,11 +228,11 @@ h2 {
 /* ////////////////footer////////////////// */
 .footer {
   font-size: 12px;
-  margin-left: 300px;
-  margin-bottom: 0; 
-  padding: 20px;   
-  text-align: center; 
-  /*margin: 50px 20px 20px 320px;*/
+  /* margin-left: 300px;
+  margin-bottom: 0;
+  padding: 20px;
+  text-align: center; */
+  margin: 50px 20px 20px 320px;
   /* background-color: #69db7c; */
   color: rgb(49, 49, 49);
   display: flex;

@@ -1,17 +1,66 @@
-import { NavLink } from "react-router-dom"
-
+import { NavLink } from "react-router-dom";
 
 export default function SideBar() {
   return (
-    <nav className="side-bar">
-      <NavLink to="/" className="side-bar-list">Home</NavLink>
-      <NavLink to="/new-recipe"  className="side-bar-list">New Recipe</NavLink>
-      <NavLink to="/update-recipe"  className="side-bar-list">Update Recipe</NavLink>
-      <NavLink to="/about"  className="side-bar-list">About</NavLink>
-      <NavLink to="/favorites"  className="side-bar-list">My Favorite Recipes</NavLink>
-      <NavLink to="/recipe-detail" className="side-bar-list">Recipe Details</NavLink>
-      <li className="side-bar-list">My Profile</li>
+    <div className="side-bar">
+      <nav className="side-bar-list">
+        <NavLink
+          to="/"
+          end
+          className={`side-bar-item ${({ isActive }) =>
+            isActive ? "active-link" : ""}`}
+        >
+          Home
+        </NavLink>
 
-    </nav>
+        <NavLink
+          to="/new-recipe"
+          className={`side-bar-item ${({ isActive }) =>
+            isActive ? "active-link" : ""}`}
+        >
+          New Recipe
+        </NavLink>
+
+        <NavLink
+          to="/update-recipe"
+          className={`side-bar-item ${({ isActive }) =>
+            isActive ? "active-link" : ""}`}
+        >
+          Update Recipe
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className={`side-bar-item ${({ isActive }) =>
+            isActive ? "active-link" : ""}`}
+        >
+          About
+        </NavLink>
+
+        <NavLink
+          to="/favorites"
+          className={`side-bar-item ${({ isActive }) =>
+            isActive ? "active-link" : ""}`}
+        >
+          My Favorite Recipes
+        </NavLink>
+
+        <NavLink
+          to="/recipe-detail"
+          className={`side-bar-item ${({ isActive }) =>
+            isActive ? "active-link" : ""}`}
+        >
+          Recipe Details
+        </NavLink>
+
+        <NavLink
+          to="/profile"
+          className={`side-bar-item ${({ isActive }) =>
+            isActive ? "active-link" : ""}`}
+        >
+          My Profile
+        </NavLink>
+      </nav>
+    </div>
   );
 }

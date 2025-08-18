@@ -1,27 +1,35 @@
-import recipeData from "../recipeList.json";
+import Button from "../components/Button";
 import { useParams, NavLink } from "react-router-dom";
+import { useEffect } from "react";
 
-function RecipeDetailPage() {
+function RecipeDetailPage({ data }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { recipeId } = useParams();
-  const singleRecipe = recipeData.find((recipe) => recipe.id === recipeId);
+  const singleRecipe = data.find((recipe) => recipe.id === recipeId);
 
   if (!singleRecipe) {
     return <p>Recipe not found.</p>;
   }
-  return (
-    <div className="single-content">
-      <div className="recipe-box">
-        <h3>{singleRecipe.name}</h3>
-        <img src={singleRecipe.image} alt={singleRecipe.name} />
-        <p>Calories: {singleRecipe.calories} kcal</p>
-        <p>
-          Servings: {singleRecipe.servings}{" "}
-          {singleRecipe.servings == 1 ? "person" : "people"}
-        </p>
 
-        <NavLink to="/" className="btn">
-          Back
-        </NavLink>
+  return (
+    <div className="main-content">
+      <div className="single-content">
+        <h2>Recipe Details</h2>
+        <div className="recipe-box recipe-detail">
+          <img src={singleRecipe.image} alt={singleRecipe.name} />
+          <h3 style={{ marginBottom: "10px" }}>{singleRecipe.name}</h3>
+          <p>Calories: {singleRecipe.calories} kcal</p>
+          <p style={{ marginBottom: "20px" }}>
+            Servings: {singleRecipe.servings}{" "}
+            {singleRecipe.servings == 1 ? "person" : "people"}
+          </p>
+
+          <NavLink to="/">
+            <Button>Back</Button>
+          </NavLink>
+        </div>
       </div>
     </div>
   );
