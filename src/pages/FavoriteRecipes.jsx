@@ -1,10 +1,10 @@
 import Content from "../components/Content";
 
-function FavoriteRecipes({ data, onHandleDel }) {
+function FavoriteRecipes({ data, onHandleDel, onHandleLike }) {
   console.log(data);
 
   return (
-    <Content data={data} onHandleDel={onHandleDel}>
+    <Content data={data} onHandleDel={onHandleDel} handleLike={onHandleLike}>
       <h2 style={{ marginBottom: "20px" }}>
         {data.length
           ? `You have ${data.length} favorite recipes`

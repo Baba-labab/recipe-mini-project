@@ -66,6 +66,7 @@ function App() {
             <FavoriteRecipes
               data={recipeArr.filter((item) => item.liked)}
               onHandleDel={handleDelBtn}
+              onHandleLike={handleLike}
             />
           }
         />
