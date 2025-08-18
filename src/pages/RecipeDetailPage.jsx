@@ -15,8 +15,8 @@ function RecipeDetailPage({ data }) {
 
   return (
     <div className="main-content">
+      <h2 style={{ marginBottom: "100px" }}>Recipe Details</h2>
       <div className="single-content">
-        <h2>Recipe Details</h2>
         <div className="recipe-box recipe-detail">
           <img src={singleRecipe.image} alt={singleRecipe.name} />
           <h3 style={{ marginBottom: "10px" }}>{singleRecipe.name}</h3>

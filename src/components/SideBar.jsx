@@ -30,14 +30,6 @@ export default function SideBar() {
         </NavLink>
 
         <NavLink
-          to="/about"
-          className={`side-bar-item ${({ isActive }) =>
-            isActive ? "active-link" : ""}`}
-        >
-          About
-        </NavLink>
-
-        <NavLink
           to="/favorites"
           className={`side-bar-item ${({ isActive }) =>
             isActive ? "active-link" : ""}`}
@@ -46,19 +38,19 @@ export default function SideBar() {
         </NavLink>
 
         <NavLink
-          to="/recipe-detail"
-          className={`side-bar-item ${({ isActive }) =>
-            isActive ? "active-link" : ""}`}
-        >
-          Recipe Details
-        </NavLink>
-
-        <NavLink
           to="/profile"
           className={`side-bar-item ${({ isActive }) =>
             isActive ? "active-link" : ""}`}
         >
           My Profile
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className={`side-bar-item ${({ isActive }) =>
+            isActive ? "active-link" : ""}`}
+        >
+          About
         </NavLink>
       </nav>
     </div>

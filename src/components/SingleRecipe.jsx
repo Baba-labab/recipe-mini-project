@@ -12,7 +12,7 @@ export default function SingleRecipe({
 
   return (
     <li className="recipe-box">
-      <NavLink to={`/recipe-detail/${recipe.id}`}>
+      <NavLink to={`/recipe-detail/${id}`}>
         <div className="recipe-img">
           <img src={recipe["image"]} />
         </div>

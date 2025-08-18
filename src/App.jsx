@@ -7,7 +7,8 @@ import AboutPage from "./pages/AboutPage";
 import CreateNewRecipe from "./pages/CreateNewRecipe";
 import UpdateRecipe from "./pages/UpdateRecipe";
 import ErrorPage from "./pages/ErrorPage";
-import FavoriteRecipe from "./pages/FavoriteRecipes";
+import FavoriteRecipes from "./pages/FavoriteRecipes";
+import Profile from "./pages/Profile";
 import { Routes, Route } from "react-router-dom";
 import recipeData from "./recipeList.json";
 import { useState } from "react";
@@ -35,6 +36,7 @@ function App() {
       })
     );
   }
+
   return (
     <div className="container">
       <NavBar />
@@ -48,6 +50,7 @@ function App() {
               data={recipeArr}
               onHandleDel={handleDelBtn}
               onHandleLike={handleLike}
+              onReset={() => setRecipeArr(recipeArr)}
             />
           }
         />
@@ -57,8 +60,17 @@ function App() {
         />
         <Route path="/new-recipe" element={<CreateNewRecipe />} />
         <Route path="/update-recipe" element={<UpdateRecipe />} />
-        <Route path="/favorites" element={<FavoriteRecipe />} />
+        <Route
+          path="/favorites"
+          element={
+            <FavoriteRecipes
+              data={recipeArr.filter((item) => item.liked)}
+              onHandleDel={handleDelBtn}
+            />
+          }
+        />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="profile" element={<Profile />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 
