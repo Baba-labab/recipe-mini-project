@@ -50,7 +50,7 @@ function App() {
               data={recipeArr}
               onHandleDel={handleDelBtn}
               onHandleLike={handleLike}
-              onReset={() => setRecipeArr(recipeArr)}
+              // onReset={() => setRecipeArr(recipeArr)}
             />
           }
         />

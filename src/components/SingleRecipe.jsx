@@ -46,7 +46,7 @@ export default function SingleRecipe({
           className="btn"
           data-index={index}
           data-id={id}
-          onClick={() => onHandleDel(event)}
+          onClick={(e) => onHandleDel(e)}
         >
           Delete
         </button>
