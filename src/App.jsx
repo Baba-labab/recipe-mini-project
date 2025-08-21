@@ -37,6 +37,11 @@ function App() {
     );
   }
 
+ const handleAddRecipe = (newRecipe) => {
+    setRecipeArr([...recipeArr, newRecipe])
+
+  }
+
   return (
     <div className="container">
       <NavBar />
@@ -58,7 +63,7 @@ function App() {
           path="/recipe-detail/:recipeId"
           element={<RecipeDetailPage data={recipeArr} />}
         />
-        <Route path="/new-recipe" element={<CreateNewRecipe />} />
+        <Route path="/new-recipe" element={<CreateNewRecipe addNewRecipe={handleAddRecipe}/>} />
         <Route path="/update-recipe" element={<UpdateRecipe />} />
         <Route
           path="/favorites"

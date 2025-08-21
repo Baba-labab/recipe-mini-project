@@ -1,34 +1,60 @@
 import Button from "../components/Button";
-function CreateNewRecipe() {
+import {useState} from "react"
+
+function CreateNewRecipe({addNewRecipe}) {
+  const [recipeName, setRecipeName] = useState(""); 
+  const [image, setImage] = useState(""); 
+  const [calories, setCalories] = useState(""); 
+  const [servings, setServings] = useState(""); 
+
+const handleSubmit = (e) => {
+  e.preventDefault(); 
+
+  const newRecipe = {
+    recipeName, 
+    image, 
+    calories, 
+    servings
+  }; 
+
+addNewRecipe(newRecipe); 
+
+setRecipeName(""); 
+setImage(""); 
+setCalories(""); 
+setServings(""); 
+
+}
+
   return (
     <div className="main-content">
       <h2 style={{ marginBottom: "100px" }}>Create New Recipes</h2>
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="recipe-title">Input the recipe's name:</label>
-            <input type="text" id="recipe-title" value="" />
+            <label htmlFor="recipe-title">Recipe's name:</label>
+            <input type="text" id="recipe-title" placeholder="Smashed Potatoes"value={recipeName} onChange={(e)=>setRecipeName(e.target.value)}/>
           </div>
 
           <div>
             <label htmlFor="recipe-calories">
-              Input the recipe's calories:
+              Calories:
             </label>
-            <input type="text" id="recipe-calories" value="" />
+            <input type="text" id="recipe-calories" placeholder="50" value={calories} onChange={(e)=>setCalories(e.target.value)}/>
           </div>
 
           <div>
-            <label htmlFor="recipe-serving">How many servings:</label>
+            <label htmlFor="recipe-serving">Number of Servings:</label>
             <input
               type="text"
               id="recipe-serving"
-              value=""
               placeholder="1 person"
+              value={servings} onChange={(e)=>setServings(e.target.value)}
             />
           </div>
 
           <div>
-            <input type="file" id="recipe-img" value="" />
+            <input type="url" id="recipe-img" placeholder="https://img.com" value={image} onChange={(e)=>setImage(e.target.value)} />
             <label htmlFor="recipe-img">Upload the recipe picture</label>
           </div>
 
