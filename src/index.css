@@ -252,3 +252,28 @@ textarea {
   justify-content: center;
   /* z-index: 1000; */
 }
+
+.form-content {
+  width: 60%; 
+  background-color: #b2f2bb;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #999;
+}
+
+label {
+  font-size: larger;
+}
+
+input {
+  width: 90%;
+  padding: 5px;
+  margin: 10px 0 30px; 
+  border-radius: 5px;
+  border: 2px solid #e67700;
+}
+
+input:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.94);
+}

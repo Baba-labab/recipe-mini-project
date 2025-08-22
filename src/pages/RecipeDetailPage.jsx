@@ -15,8 +15,9 @@ function RecipeDetailPage({ data }) {
 
   return (
     <div className="main-content">
-      <h2 style={{ marginBottom: "100px" }}>Recipe Details</h2>
+        <h1 style={{ marginBottom: "50px" }}>Recipe Details</h1>
       <div className="single-content">
+      
         <div className="recipe-box recipe-detail">
           <img src={singleRecipe.image} alt={singleRecipe.name} />
           <h3 style={{ marginBottom: "10px" }}>{singleRecipe.name}</h3>
@@ -26,8 +27,8 @@ function RecipeDetailPage({ data }) {
             {singleRecipe.servings == 1 ? "person" : "people"}
           </p>
 
-          <NavLink to="/">
-            <Button>Back</Button>
+          <NavLink to="/update-recipe">
+            <Button>Edit</Button>
           </NavLink>
         </div>
       </div>

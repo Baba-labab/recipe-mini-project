@@ -21,13 +21,13 @@ export default function SideBar() {
           New Recipe
         </NavLink>
 
-        <NavLink
+        {/* <NavLink
           to="/update-recipe"
           className={`side-bar-item ${({ isActive }) =>
             isActive ? "active-link" : ""}`}
         >
           Update Recipe
-        </NavLink>
+        </NavLink> */}
 
         <NavLink
           to="/favorites"
