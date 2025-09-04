@@ -37,9 +37,15 @@ function App() {
     );
   }
 
- const handleAddRecipe = (newRecipe) => {
-    setRecipeArr([...recipeArr, newRecipe])
+  const handleAddRecipe = (newRecipe) => {
+    setRecipeArr([...recipeArr, newRecipe]);
+  };
 
+  function handleUpdatedRecipe(updatedRecipe) {
+    setRecipeArr([
+      updatedRecipe,
+      ...recipeArr.filter((recipe) => recipe.id !== updatedRecipe.id),
+    ]);
   }
 
   return (
@@ -61,10 +67,22 @@ function App() {
         />
         <Route
           path="/recipe-detail/:recipeId"
-          element={<RecipeDetailPage data={recipeArr} />}
+          element={
+            <RecipeDetailPage
+              data={recipeArr}
+              onHandleUpdate={handleUpdatedRecipe}
+            />
+          }
         />
-        <Route path="/new-recipe" element={<CreateNewRecipe addNewRecipe={handleAddRecipe}/>} />
-        <Route path="/update-recipe" element={<UpdateRecipe />} />
+        <Route
+          path="/new-recipe"
+          element={<CreateNewRecipe addNewRecipe={handleAddRecipe} />}
+        />
+        <Route
+          path="/update-recipe"
+          element={<UpdateRecipe />}
+          onHandleUpdate={handleUpdatedRecipe}
+        />
         <Route
           path="/favorites"
           element={

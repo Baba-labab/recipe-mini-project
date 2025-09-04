@@ -1,47 +1,60 @@
 import Button from "../components/Button";
-import {useState} from "react"
+import { useState } from "react";
 
-function UpdateRecipe({addEditedRecipe}) {
-const [recipeName, setRecipeName] = useState(""); 
-  const [image, setImage] = useState(""); 
-  const [calories, setCalories] = useState(""); 
-  const [servings, setServings] = useState(""); 
+function UpdateRecipe({ singleRecipe, onHandleUpdate }) {
+  const [recipeName, setRecipeName] = useState(singleRecipe.name);
+  const [image, setImage] = useState(singleRecipe.image);
+  const [calories, setCalories] = useState(singleRecipe.calories);
+  const [servings, setServings] = useState(singleRecipe.servings);
 
   const handleSubmit = (e) => {
-  e.preventDefault(); 
+    e.preventDefault();
 
-  const updatedRecipe = {
-    id,
-    name: recipeName, 
-    calories,
-    image,  
-    servings
-  }; 
+    const updatedRecipe = {
+      id: singleRecipe.id,
+      name: recipeName,
+      calories,
+      image,
+      servings,
+    };
 
-addEditedRecipe(updatedRecipe); 
+    onHandleUpdate(updatedRecipe);
+    alert("You have sucessfully updated your recipe!");
 
-setRecipeName(""); 
-setImage(""); 
-setCalories(""); 
-setServings(""); 
-
-}
+    // setRecipeName("");
+    // setImage("");
+    // setCalories("");
+    // setServings("");
+  };
 
   return (
-    <div className="main-content">
-      <h1 style={{ marginBottom: "50px" }}>Update My Recipe</h1>
+    <div
+      className="main-content"
+      style={{ display: "flex", flexDirection: "column", marginBottom: "40px" }}
+    >
+      <h1 style={{ marginBottom: "40px" }}>Update My Recipe</h1>
       <div className="form-content">
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="recipe-title">Recipe's Name:</label>
-            <input type="text" id="recipe-title" placeholder="Smashed Potatoes" value={recipeName} onChange={(e)=>setRecipeName(e.target.value)}/>
+            <input
+              type="text"
+              id="recipe-title"
+              placeholder="Smashed Potatoes"
+              value={recipeName}
+              onChange={(e) => setRecipeName(e.target.value)}
+            />
           </div>
 
           <div>
-            <label htmlFor="recipe-calories">
-              Calories:
-            </label>
-            <input type="number" id="recipe-calories" placeholder="50" value={calories} onChange={(e)=>setCalories(e.target.value)}/>
+            <label htmlFor="recipe-calories">Calories:</label>
+            <input
+              type="number"
+              id="recipe-calories"
+              placeholder="50"
+              value={calories}
+              onChange={(e) => setCalories(e.target.value)}
+            />
           </div>
 
           <div>
@@ -50,13 +63,20 @@ setServings("");
               type="number"
               id="recipe-serving"
               placeholder="1"
-              value={servings} onChange={(e)=>setServings(e.target.value)}
+              value={servings}
+              onChange={(e) => setServings(e.target.value)}
             />
           </div>
 
           <div>
             <label htmlFor="recipe-img">Link to Recipe Picture:</label>
-            <input type="url" id="recipe-img" placeholder="https://img.com" value={image} onChange={(e)=>setImage(e.target.value)} />
+            <input
+              type="url"
+              id="recipe-img"
+              placeholder="https://img.com"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+            />
           </div>
 
           <Button>save</Button>
@@ -64,11 +84,6 @@ setServings("");
       </div>
     </div>
   );
-
 }
 
-export default UpdateRecipe
-  
-
-
-
+export default UpdateRecipe;

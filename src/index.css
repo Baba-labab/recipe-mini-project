@@ -248,7 +248,7 @@ h2 {
   margin-bottom: 0;
   padding: 20px;
   text-align: center; */
-  margin: 50px 20px 20px 320px;
+  margin: 50px 20px 5px 320px;
   /* background-color: #69db7c; */
   color: rgb(49, 49, 49);
   display: flex;
@@ -258,12 +258,13 @@ h2 {
 }
 
 .form-content {
-  width: 60%; 
+  width: 60%;
   background-color: #b2f2bb;
   border-radius: 20px;
   padding: 20px;
   text-align: center;
   border: 1px solid #999;
+  align-self: center;
 }
 
 label {
@@ -273,9 +274,13 @@ label {
 input {
   width: 90%;
   padding: 5px;
-  margin: 10px 0 30px; 
+  margin: 10px 0 30px;
   border-radius: 5px;
   border: 2px solid #e67700;
+}
+
+input:focus {
+  outline: none;
 }
 
 input:hover {
@@ -283,7 +288,7 @@ input:hover {
 }
 
 .about-container {
-  display: flex; 
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 20px;
@@ -293,7 +298,5 @@ input:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px; 
+  padding: 20px;
 }
-
-
