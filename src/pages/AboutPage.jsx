@@ -25,7 +25,7 @@ function AboutPage() {
             style={{
               width: "100px",
               height: "100px",
-              // backgroundImage: "url(image/zixuan.JPG)",
+              backgroundImage: "url(image/Barbara.JPG)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
