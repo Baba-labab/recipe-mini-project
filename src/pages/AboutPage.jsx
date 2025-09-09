@@ -1,6 +1,6 @@
 function AboutPage() {
   return (
-    <div className="main-content" style={{ marginBottom: "-12px" }}>
+    <div className="main-content" style={{ marginBottom: "1px" }}>
       <h1>About</h1>
       {/* <h2>Project Description</h2> */}
       <p

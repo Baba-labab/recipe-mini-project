@@ -1,11 +1,13 @@
 import Button from "../components/Button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateNewRecipe({ addNewRecipe }) {
   const [recipeName, setRecipeName] = useState("");
   const [image, setImage] = useState("");
   const [calories, setCalories] = useState("");
   const [servings, setServings] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +27,7 @@ function CreateNewRecipe({ addNewRecipe }) {
       calories,
       image,
       servings,
+      liked: false,
     };
 
     addNewRecipe(newRecipe);
@@ -33,6 +36,8 @@ function CreateNewRecipe({ addNewRecipe }) {
     setImage("");
     setCalories("");
     setServings("");
+
+    navigate("/");
   };
 
   return (
