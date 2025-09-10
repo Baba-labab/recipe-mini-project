@@ -22,7 +22,7 @@ export default function SingleRecipe({
           <p>calories: {recipe["calories"]}kcal</p>
           <p>
             serving for {recipe["servings"]}{" "}
-            <span>{recipe["servings"] === 1 ? "person" : "people"}</span>
+            <span>{recipe["servings"] == 1 ? "person" : "people"}</span>
           </p>
         </div>
       </NavLink>

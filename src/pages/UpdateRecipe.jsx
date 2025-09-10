@@ -1,11 +1,13 @@
 import Button from "../components/Button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function UpdateRecipe({ singleRecipe, onHandleUpdate }) {
   const [recipeName, setRecipeName] = useState(singleRecipe.name);
   const [image, setImage] = useState(singleRecipe.image);
   const [calories, setCalories] = useState(singleRecipe.calories);
   const [servings, setServings] = useState(singleRecipe.servings);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,10 +18,11 @@ function UpdateRecipe({ singleRecipe, onHandleUpdate }) {
       calories,
       image,
       servings,
+      liked: singleRecipe.liked,
     };
 
     onHandleUpdate(updatedRecipe);
-    alert("You have sucessfully updated your recipe!");
+    navigate("/");
 
     // setRecipeName("");
     // setImage("");
