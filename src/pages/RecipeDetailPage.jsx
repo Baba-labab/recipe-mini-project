@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import UpdateRecipe from "./UpdateRecipe";
 
 function RecipeDetailPage({ data, onHandleUpdate }) {
+  const [isclicked, setIsClicked] = useState(false);
+  const { recipeId } = useParams();
+  const singleRecipe = data.find((recipe) => recipe.id == recipeId);
+  console.log(recipeId, singleRecipe);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const [isclicked, setIsClicked] = useState(false);
-  const { recipeId } = useParams();
-  const singleRecipe = data.find((recipe) => recipe.id === recipeId);
 
   if (!singleRecipe) {
     return <p>Recipe not found.</p>;

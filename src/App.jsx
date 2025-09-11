@@ -37,6 +37,8 @@ function App() {
     );
   }
 
+  console.log(recipeArr);
+
   const handleAddRecipe = (newRecipe) => {
     setRecipeArr([...recipeArr, newRecipe]);
   };
