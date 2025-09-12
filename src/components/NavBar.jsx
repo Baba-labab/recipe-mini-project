@@ -17,7 +17,7 @@ export default function NavBar() {
       </svg>
 
       <div className="user">
-        <img src="../public/image/logo2.png" className="logo" />
+        <img src="../image/logo2.png" className="logo" />
         <span className="greeting">Hello, user</span>
         <span className="log-out">Log out</span>
       </div>
